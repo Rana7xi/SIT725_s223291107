@@ -1,9 +1,17 @@
 const express = require('express');
 const path = require('path');
-const booksRoutes = require('./routes/books');
+const mongoose = require('mongoose');
+const booksRoutes = require('./routes/bookRoute');
 
 const app = express();
 const PORT = 3000;
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/booksDB');
+
+mongoose.connection.on('connected', () => {
+  console.log('Connected to MongoDB');
+});
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
