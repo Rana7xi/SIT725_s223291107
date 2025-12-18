@@ -1,0 +1,17 @@
+
+.card-image img {
+  height: 200px;
+  object-fit: cover;
+}
+
+#bookCards .col {
+  display: flex;
+}
+
+#bookCards .card {
+  flex: 1 1 auto;
+}
+
+body {
+  margin-bottom: 40px;
+}
